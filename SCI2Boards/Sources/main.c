@@ -65,7 +65,7 @@ void main(void)
     {
       sci0_txByte('r');
     }
-    if(Sw_Process(&left, SWL_LEFT) == Released)
+    else if(Sw_Process(&left, SWL_LEFT) == Released)
     {
       sci0_txByte('R');
     
@@ -75,7 +75,7 @@ void main(void)
     {
       sci0_txByte('y');
     }
-    if(Sw_Process(&ctr, SWL_CTR) == Released)
+    else if(Sw_Process(&ctr, SWL_CTR) == Released)
     {
       sci0_txByte('Y');
     
@@ -85,7 +85,7 @@ void main(void)
     {
       sci0_txByte('g');
     }
-    if(Sw_Process(&rgt, SWL_RIGHT) == Released)
+    else if(Sw_Process(&rgt, SWL_RIGHT) == Released)
     {
       sci0_txByte('G');
     
