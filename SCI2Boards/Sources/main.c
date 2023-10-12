@@ -111,17 +111,29 @@ interrupt VectorNumber_Vsci0 void Vsci0_ISR(void)
     
     if (rxData == 'r')
     {
-      SWL_TOG(SWL_RED);
+      SWL_ON(SWL_RED);
+    }
+    if (rxData == 'R')
+    {
+      SWL_OFF(SWL_RED);
     }
 
     if (rxData == 'y')
     {
-      SWL_TOG(SWL_YELLOW);
+      SWL_ON(SWL_YELLOW);
+    }
+    if (rxData == 'Y')
+    {
+      SWL_OFF(SWL_YELLOW);
     }
 
     if (rxData == 'g')
     {
-      SWL_TOG(SWL_GREEN);
+      SWL_ON(SWL_GREEN);
+    }
+    if (rxData == 'G')
+    {
+      SWL_OFF(SWL_GREEN);
     }
   }
 }
