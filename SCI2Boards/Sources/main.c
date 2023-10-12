@@ -61,35 +61,38 @@ void main(void)
   /////////////////////////////////////////////////////////////////////////////
   for (;;)
   {
-    if (Sw_Process(&left, SWL_LEFT) == Pressed)
+    Sw_ProcessD(&left, SWL_LEFT);
+    Sw_ProcessD(&ctr, SWL_CTR);
+    Sw_ProcessD(&rgt, SWL_RIGHT);
+    if (left == Pressed)
     {
       sci0_txByte('r');
     }
-    else if(Sw_Process(&left, SWL_LEFT) == Released)
+    else if(left  == Released)
     {
       sci0_txByte('R');
     
     }
 
-    if (Sw_Process(&ctr, SWL_CTR) == Pressed)
+    if (ctr == Pressed)
     {
       sci0_txByte('y');
     }
-    else if(Sw_Process(&ctr, SWL_CTR) == Released)
+    else if(ctr == Released)
     {
       sci0_txByte('Y');
     
     }
-
-    if (Sw_Process(&rgt, SWL_RIGHT) == Pressed)
+    if(rgt == Pressed)
     {
       sci0_txByte('g');
     }
-    else if(Sw_Process(&rgt, SWL_RIGHT) == Released)
+    else if(rgt == Released)
     {
       sci0_txByte('G');
     
     }
+
   }                 
 }
 

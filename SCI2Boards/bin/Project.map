@@ -722,8 +722,8 @@ OBJECT-ALLOCATION SECTION
 ---------------------------------------------------------------------------------------------
 MODULE:                 -- main.c.o --
 - PROCEDURES:
-     main                                      C053      96     150       1   .text       
-     Vsci0_ISR                                 C0E9      55      85       1   .text       
+     main                                      C053      7E     126       1   .text       
+     Vsci0_ISR                                 C0D1      55      85       1   .text       
 - VARIABLES:
      _Vector_20                                FFD6       2       2       0   .abs_section_ffd6
      rxData                                    2108       1       1       6   .common     
@@ -1390,7 +1390,7 @@ MODULE:                 -- mc9s12xdp512.c.o --
      _XGR7                                      3AE       2       2       0   .abs_section_3ae
 MODULE:                 -- MATH.C.o (ansixs.lib) --
 - PROCEDURES:
-     ceil                                      C13E      42      66       1   .text       
+     ceil                                      C126      42      66       1   .text       
 - VARIABLES:
 MODULE:                 -- DANSI.C.o (ansixs.lib) --
 - PROCEDURES:
@@ -1450,35 +1450,36 @@ MODULE:                 -- VREGS.C.o (ansixs.lib) --
 - VARIABLES:
 MODULE:                 -- clock.c.o --
 - PROCEDURES:
-     Clock_Set20MHZ                            C180      22      34       1   .text       
-     Clock_GetBusSpeed                         C1A2       7       7       2   .text       
+     Clock_Set20MHZ                            C168      22      34       1   .text       
+     Clock_GetBusSpeed                         C18A       7       7       2   .text       
 - VARIABLES:
      ClockSpeed                                2100       4       4       4   .data       
 MODULE:                 -- rti.c.o --
 - PROCEDURES:
-     Vrti_ISR                                  C1A9      17      23       1   .text       
+     Vrti_ISR                                  C191      17      23       1   .text       
 - VARIABLES:
      delayCounter                              2104       2       2       2   .bss        
      callback                                  2106       2       2       2   .bss        
      _Vector_7                                 FFF0       2       2       0   .abs_section_fff0
 MODULE:                 -- sci.c.o --
 - PROCEDURES:
-     sci0_Init                                 C1C0      50      80       1   .text       
-     sci0_txByte                               C210       9       9       3   .text       
+     sci0_Init                                 C1A8      50      80       1   .text       
+     sci0_txByte                               C1F8       9       9       3   .text       
 - VARIABLES:
 MODULE:                 -- sw_led.c.o --
 - PROCEDURES:
-     SWL_Init                                  C219       D      13       1   .text       
-     SWL_ON                                    C226       B      11       3   .text       
-     SWL_OFF                                   C231       C      12       3   .text       
-     Sw_Process                                C23D      2C      44       6   .text       
+     SWL_Init                                  C201       D      13       1   .text       
+     SWL_ON                                    C20E       B      11       3   .text       
+     SWL_OFF                                   C219       C      12       3   .text       
+     SWL_PushedDeb                             C225      1F      31       1   .text       
+     Sw_ProcessD                               C244      25      37       3   .text       
 - VARIABLES:
 
 *********************************************************************************************
 MODULE STATISTIC
   Name                                      Data   Code  Const
 ---------------------------------------------------------------------------------------------
-  main.c.o                                     7    235      2
+  main.c.o                                     7    211      2
   Start12.c.o                                  0     49      0
   mc9s12xdp512.c.o                           768      0      0
   MATH.C.o (ansixs.lib)                        0     66      0
@@ -1494,7 +1495,7 @@ MODULE STATISTIC
   clock.c.o                                    4     41      0
   rti.c.o                                      4     23      2
   sci.c.o                                      0     89      0
-  sw_led.c.o                                   0     80      0
+  sw_led.c.o                                   0    104      0
   other                                      256     36      8
 
 *********************************************************************************************
@@ -1502,7 +1503,7 @@ SECTION USE IN OBJECT-ALLOCATION SECTION
 ---------------------------------------------------------------------------------------------
 SECTION: ".text"
   main Vsci0_ISR ceil Clock_Set20MHZ Clock_GetBusSpeed Vrti_ISR sci0_Init 
-  sci0_txByte SWL_Init SWL_ON SWL_OFF Sw_Process 
+  sci0_txByte SWL_Init SWL_ON SWL_OFF SWL_PushedDeb Sw_ProcessD 
 SECTION: ".data"
   ClockSpeed 
 SECTION: ".bss"
@@ -3474,18 +3475,19 @@ OBJECT LIST SORTED BY ADDRESS
      rgt                                       210D       2       2       2   .common     
      Init                                      C000      29      41       1   .init       
      _Startup                                  C029       8       8       0   .init       
-     main                                      C053      96     150       1   .text       
-     Vsci0_ISR                                 C0E9      55      85       1   .text       
-     ceil                                      C13E      42      66       1   .text       
-     Clock_Set20MHZ                            C180      22      34       1   .text       
-     Clock_GetBusSpeed                         C1A2       7       7       2   .text       
-     Vrti_ISR                                  C1A9      17      23       1   .text       
-     sci0_Init                                 C1C0      50      80       1   .text       
-     sci0_txByte                               C210       9       9       3   .text       
-     SWL_Init                                  C219       D      13       1   .text       
-     SWL_ON                                    C226       B      11       3   .text       
-     SWL_OFF                                   C231       C      12       3   .text       
-     Sw_Process                                C23D      2C      44       6   .text       
+     main                                      C053      7E     126       1   .text       
+     Vsci0_ISR                                 C0D1      55      85       1   .text       
+     ceil                                      C126      42      66       1   .text       
+     Clock_Set20MHZ                            C168      22      34       1   .text       
+     Clock_GetBusSpeed                         C18A       7       7       2   .text       
+     Vrti_ISR                                  C191      17      23       1   .text       
+     sci0_Init                                 C1A8      50      80       1   .text       
+     sci0_txByte                               C1F8       9       9       3   .text       
+     SWL_Init                                  C201       D      13       1   .text       
+     SWL_ON                                    C20E       B      11       3   .text       
+     SWL_OFF                                   C219       C      12       3   .text       
+     SWL_PushedDeb                             C225      1F      31       1   .text       
+     Sw_ProcessD                               C244      25      37       3   .text       
      modf                                      C269       3       3       1   RUNTIME     
      F_ADDKL                                   C26C      5E      94       1   RUNTIME     
      _FADD                                     C2CA      15      21       1   RUNTIME     
@@ -3554,7 +3556,7 @@ rti.c.o:
 sci.c.o:
   sci0_bread sci0_rxByte sci0_txStr sci0_rxStr sci_Init 
 sw_led.c.o:
-  SWL_TOG SWL_Pushed SWL_Any SWL_PushedDeb 
+  SWL_TOG SWL_Pushed SWL_Any Sw_Process 
 NOT USED VARIABLES
 MATH.C.o (ansixs.lib):
   infinity nan_union small.1 big.2 errno 
@@ -3582,7 +3584,7 @@ OBJECT-DEPENDENCIES SECTION
 Init                      USES _startupData 
 _Startup                  USES __SEG_END_SSTACK Init main 
 main                      USES Clock_Set20MHZ SWL_Init sci0_Init left 
-                                Sw_Process sci0_txByte ctr rgt 
+                                Sw_ProcessD ctr rgt sci0_txByte 
 Vsci0_ISR                 USES _SCI0SR1 _SCI0DRL rxData SWL_ON SWL_OFF 
 ceil                      USES modf _FCMP _FADD 
 Clock_Set20MHZ            USES ClockSpeed _CLKSEL _SYNR _REFDV _PLLCTL _CRGFLG 
@@ -3594,7 +3596,8 @@ sci0_txByte               USES _SCI0SR1 _SCI0DRL
 SWL_Init                  USES _PT01AD1 _DDR01AD1 _ATD1DIEN 
 SWL_ON                    USES _PT01AD1 
 SWL_OFF                   USES _PT01AD1 
-Sw_Process                USES _PT01AD1 
+SWL_PushedDeb             USES _PT01AD1 
+Sw_ProcessD               USES SWL_PushedDeb 
 modf                      USES modff 
 F_ADDKL                   USES F_XGKL F_NORMK 
 _FADD                     USES F_PULK F_PULL F_ADDKL F_PSHK 
@@ -3709,8 +3712,10 @@ DEPENDENCY TREE
  |  |     | 
  |  |     +- _lDivMod            
  |  |          
- |  +- Sw_Process          
- |  |    
+ |  +- Sw_ProcessD         
+ |  |  | 
+ |  |  +- SWL_PushedDeb       
+ |  |       
  |  +- sci0_txByte         
  |       
  +- _Startup            
